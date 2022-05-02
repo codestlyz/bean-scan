@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Century Gothic;
+}
+
+.app_display{
+    margin: 3px;
+    padding: 0;
+    display: inline-block;
+    float: none;
+}
+
+body {
+    display: block;
+    background-color: chocolate;
+
+}
