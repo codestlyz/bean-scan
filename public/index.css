@@ -238,15 +238,6 @@ code {
     margin-top: 24px;
     margin-bottom: 24px;
 }
-.css-4sd5su.Mui-disabled {
-    color: rgba(0, 0, 0, 0.26);
-    box-shadow: none;
-    background-color: rgba(0, 0, 0, 0.12);
-}
-.css-4sd5su.Mui-disabled {
-    pointer-events: none;
-    cursor: default;
-}
 .css-4sd5su {
     display: inline-flex;
     -webkit-box-align: center;
