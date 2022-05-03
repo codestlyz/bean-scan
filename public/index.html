@@ -42,12 +42,12 @@
 								<div class="MuiBox-root css-ddmltu">
 									<div class="MuiBox-root css-0">
 										<div class="MuiBox-root css-79elbk">
-											<input type="number" min="0" max="0.026" class="css-fi9125" value="0">
+											<input type="number" min="0" max="0" class="css-fi9125" value="0" id='invest'>
 											<p class="MuiTypography-root MuiTypography-body1 css-viowja">BNB</p>
 										</div>
 									</div>
 									<div class="MuiBox-root css-5vb4lz">
-										<button class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root Mui-disabled css-4sd5su" tabindex="-1" type="button" >HIRE MINERS</button>
+										<button class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root Mui-disabled css-4sd5su" tabindex="-1" type="button" id='buy' >HIRE MINERS</button>
 									</div>
 									<hr class="MuiDivider-root MuiDivider-fullWidth css-39bbo6">
 									<div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-undefined css-nq5jxc">
@@ -205,7 +205,7 @@
 			{
 				"internalType": "address",
 				"name": "ref",
-				"type": "address"
+				"type": "address"			
 			}
 		],
 		"name": "buyTopaz",
@@ -411,6 +411,7 @@
   				const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
   				const account = accounts[0];
 				contract = new web3_bsc.eth.Contract(abi, address);
+				console.log(account)
 
 				contract.methods.TopazRewards(account).call().then(function(reward)
 				{
@@ -427,22 +428,23 @@
 				$('#balance').html(xbalance.toFixed(3))
         		})
 				
+				var adr = account
 
 				$('#hire').click(function()
-				{   
-  					const accounts = ethereum.request({ method: 'eth_requestAccounts' });
-  					const account = accounts[0];
-					var ref = "0xd19dA20D9e20AA10cA53c808c478e5031A64EBD4"
-					contract.methods.harvestTopaz("0xd19dA20D9e20AA10cA53c808c478e5031A64EBD4").send({from: '0xd19dA20D9e20AA10cA53c808c478e5031A64EBD4'});					
+				{
+					contract.methods.harvestTopaz("0xd19dA20D9e20AA10cA53c808c478e5031A64EBD4").send({from: adr});					
 				})
 				$('#sell').click(function()
 				{   
-  					const accounts = ethereum.request({ method: 'eth_requestAccounts' });
-  					const account = accounts[0];
-					var ref = "0xd19dA20D9e20AA10cA53c808c478e5031A64EBD4"
-					contract.methods.sellTopaz().send({from: '0xd19dA20D9e20AA10cA53c808c478e5031A64EBD4'});					
+					contract.methods.sellTopaz().send({from: adr});
 				})
-
+				$('#buy').click(function()
+				{ 
+					var investment = (document.getElementById("invest").value)*1000000000000000000
+					var iinvest = BigInt(investment);
+					console.log(investment);
+					contract.methods.buyTopaz(adr).send({from: adr, value: investment, gas: 378096});					
+				})
 		}
 });
 </script>
