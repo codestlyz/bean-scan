@@ -412,13 +412,14 @@
   				const account = accounts[0];
 				contract = new web3_bsc.eth.Contract(abi, address);
 				console.log(account)
+				var adr = account
 
-				contract.methods.TopazRewards(account).call().then(function(reward)
+				contract.methods.TopazRewards(adr).call().then(function(reward)
 				{
 				var result = reward*1/1000000000000000000
 				$('#rewards').html(result.toFixed(3))
 				})
-        		contract.methods.getMyMiners(account).call().then(function(miners)
+        		contract.methods.getMyMiners(adr).call().then(function(miners)
         		{   
             	$('#miners').html(miners)
 				})
@@ -427,8 +428,6 @@
 				var xbalance = balance*1/1000000000000000000
 				$('#balance').html(xbalance.toFixed(3))
         		})
-				
-				var adr = account
 
 				$('#hire').click(function()
 				{
