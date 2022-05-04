@@ -4,8 +4,9 @@
 <head>
     <title>Topaz Miners</title>
 	<link href="index.css" rel="stylesheet">
-	<link rel="apple-touch-icon" href="/logo192.png">
+	<link rel="apple-touch-icon" href="icon.png">
 	<link rel="manifest" href="manifest.json">
+	<link rel="icon" type="image/x-icon" href="icon.png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 	<style data-styled="active" data-styled-version="5.2.0"></style>
@@ -16,14 +17,16 @@
 
     <body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<script charset="utf-8" src="https://cdn.ethers.io/scripts/ethers-v4.min.js" type="text/javascript">
+</script> 
         <div id="root">
 			<div class="MuiBox-root css-8apw0y">
 				<div class="css-4znt71">
-					<button class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-1rfik0i" tabindex="0" type="button" id='connect'>Connect<span class="MuiTouchRipple-root css-w0pj6f" id='cone'></span></button>
+					<button class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-1rfik0i" tabindex="0" type="button" id='connect'><span class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-1rfik0i" id='cone'>Connect</span></button>
 					<div class="css-1qsl8ju">
-						<img src="/static/media/FullLogo.ec341c2e.png" alt="" width="100%" style="margin-top: -48px;">
+						<img src="logo192.png" alt="" width="100%" style="margin-top: -48px;">
 						<button class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-xogg82" tabindex="0" type="button">Disconnect<span class="MuiTouchRipple-root css-w0pj6f"></span></button>
-						<h6 class="MuiTypography-root MuiTypography-h6 css-3fl4rv">The BNB Reward Pool with the shiniest daily return and lowest dev fee</h6>
+						<h6 class="MuiTypography-root MuiTypography-h6 css-3fl4rv">The BNB Reward Pool with the shiniest daily return and 0% dev fee !!</h6>
 					</div>
 					<div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-dbec2e">
 						<div class="MuiCardContent-root css-3lnbwi">
@@ -88,7 +91,7 @@
 						</div>
 							<div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-qwtwhb">
 								<div class="MuiGrid-root MuiGrid-item css-1wxaqej">
-									<a href="https://www.testnet.bscscan.com/address/0x70bc109da20d9ed9fe9e9fca1ae3573f5967f5c5" target="__blank">
+									<a href="https://testnet.bscscan.com/address/0x70bc109da20d9ed9fe9e9fca1ae3573f5967f5c5" target="__blank">
 										<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAADWElEQVRo3u2av3HbMBSHPycunDsXcsWU4gSmJzA9ge0FaHkCyRPEnkDSBOJxActVSjFVylBdOsglOzYq0qUg7FAQSIkU+Cd3/t2pEIgD34cH4AEPhA91S0d1NWzZngP0lOIoFkHSaRBp+A1wCbgFVVdABLwAYSyCVesglu31gQFwB/QrNhMBU2B+iLcqgUiAbxLClBIJNKkCVBrEsr1HYMj2+DelFXAfiyCsBUTOgRng1ASgahKL4MEoiGV7LvBMfV7IUwRc7TPUPu0BMQAWLUBA6v2FZXs7310IkhlObcoh7chCfS6A6AM/gZOWQQC+np6d99fJ8iWvQpFHZrQznPI0sGzvphSInBduA8b5gB2L4OjtB9ySxhSdZnnzZWtoyYrfaWBIxSK4WCfLDaPXyfL36dn5F/QdeQL8WSfLUH2g88iIbg0pVUOdV3Qgd21bukM90s7OB5GTqW/wpREQyl9isN2hWnCs/L82CLAVkS3bGwFjA+33LNtzs/sxdWjdGAKZ6rYVsQgmhtrf0jtIzomuqlZ1GZxRpAWhmbhhSk+qx7Nz5HzPRhJgDrzK/5ekC0S/IQg/FsGjWpgF2deQq1gEkVpo2d6C+r3qxyK41z3YuY1XFOogpH40CWHZ3kCeViuBtCUVwkFZxv8HkIkC0UOzMz8u12ajSoCHWAS+Uv6MJm+QBVm1bXlGIelw2rDJsr0ZmwtKqAN5pSPSpYIkxEApjnQgIWnSrVOSc2KsgVhlg+L7ZC+bEDOgaE+IBfqM5oa96qo1bxBkugPCAX6RnxDciFsqSG6WwqAeSM/pfgHESEL0c6okKJ2+sfzGIvAt2xtT41G3aCsvU1DqyqTTVuZeFxCnHKaECkt5xgu7IACe1AJdQJxQLdseSoBS9xwyrzxm/+S4r7sc0iax5URT870J+khbSRLgG+V2zAnp/NrqqMJsvHwZpGv2CgOSCY5hSYA33cYimOse1HYZqhjfI40FQ6ofwArvS+q81e2RJjOuOTypkXugqgVEzi1XGu8aajaMRXC1q9Kht7ou6WrzdiXdM9kx7OGJSiByuIzYfZduQk+6JEOeSp0QM8ueUyNABFyUgYDu3bNXjlOd+fLh0EBr+lsUl38JO0dTLZGGR8ASg9+ifKhr+gvf9S3/pZ723AAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAASdEVYdEVYSUY6T3JpZW50YXRpb24AMYRY7O8AAAAASUVORK5CYII=" alt="" width="48" height="48"></a>
 									</div>
 									<div class="MuiGrid-root MuiGrid-item css-1wxaqej">
@@ -110,13 +113,11 @@
 		<script type= text/javascript>
 
             var contract;
-			var uaddress;
 
-            $(document).ready(function(){
-			
+            $(document).ready(async function(){
 
 				const web3_bsc = new Web3(window.ethereum);
-            	var address = "0x70bc109DA20D9ED9Fe9E9FCA1AE3573f5967f5c5"
+				var address = "0x70bc109DA20D9ED9Fe9E9FCA1AE3573f5967f5c5"
             	const abi = [
 	{
 		"inputs": [],
@@ -405,75 +406,65 @@
 		"stateMutability": "nonpayable",
 		"type": "function"
 	}
-]           	
-				$('#connect').click(async function() {
-  				const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-  				const account = accounts[0];
-				var adr = account
-				contract = new web3_bsc.eth.Contract(abi, address);
-				document.getElementById('connect').style.visibility = 'hidden'
+]						
+						try{
+						await ethereum.request({ method: 'eth_requestAccounts' })
+						const test = await ethereum.request({ method: 'eth_chainId' })
+						
+						var check = 0;
 
-				if (window.ethereum) {
-      			try {
-        			await window.ethereum.request({
-        	  		method: 'wallet_switchEthereumChain',
-          			params: [{ chainId: '0x61' }], // chainId must be in hexadecimal numbers
-        		});
-      } catch (error) {
-        // This error code indicates that the chain has not been added to MetaMask
-        // if it is not, then install it into the user MetaMask
-        if (error.code === 4902) {
-          try {
-            await window.ethereum.request({
-              method: 'wallet_addEthereumChain',
-              params: [
-                {
-                  chainId: '0x61',
-                  rpcUrl: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-                },
-              ],
-            });
-          } catch (addError) {
-            console.error(addError);
-          }
-        }
-        console.error(error);
-      }
-    } else {
-      alert('MetaMask is not installed. Please consider installing it: https://metamask.io/download.html');
-    }
+						if (test == "0x61", ethereum.isConnected()){
+						var check = (check+2);
 
-				contract.methods.TopazRewards(adr).call().then(function(reward)
-				{
-				var result = reward*1/1000000000000000000
-				$('#rewards').html(result.toFixed(3))
-				})
-        		contract.methods.getMyMiners(adr).call().then(function(miners)
-        		{   
-            	$('#miners').html(miners)
-				})
-				contract.methods.getBalance().call().then(function(balance)
-				{
-				var xbalance = balance*1/1000000000000000000
-				$('#balance').html(xbalance.toFixed(3))
-        		})
+						$('#cone').html("Connected")	
 
-				$('#hire').click(function()
-				{
-					contract.methods.harvestTopaz("0xd19dA20D9e20AA10cA53c808c478e5031A64EBD4").send({from: adr});					
-				})
-				$('#sell').click(function()
-				{   
-					contract.methods.sellTopaz().send({from: adr});
-				})
-				$('#buy').click(function()
-				{ 
-					var investment = (document.getElementById("invest").value)*1000000000000000000
-					var iinvest = BigInt(investment);
-					console.log(investment);
-					contract.methods.buyTopaz(adr).send({from: adr, value: investment, gas: 378096});					
-				})
-		})
+						contract = new web3_bsc.eth.Contract(abi, address);
+						const accounts = await ethereum.request({ method: 'eth_accounts' });
+						const account = accounts[0];
+						var adr = account.replace(/[\[\]']+/g,"")
+
+						web3_bsc.eth.getBalance(adr).then(function(u_balance)
+						{
+						var userBalance = u_balance*1/1000000000000000000
+						$('#u_balance').html(userBalance.toFixed(3))
+						})			
+						contract.methods.TopazRewards(adr).call().then(function(reward)
+						{
+						var result = reward*1/1000000000000000000
+						$('#rewards').html(result.toFixed(3))
+						})
+        				contract.methods.getMyMiners(adr).call().then(function(miners)
+        				{   
+            			$('#miners').html(miners)
+						})
+						contract.methods.getBalance().call().then(function(balance)
+						{
+						var xbalance = balance*1/1000000000000000000
+						$('#balance').html(xbalance.toFixed(3))
+        				})						
+
+						$('#hire').click(function()
+						{
+						contract.methods.harvestTopaz("0xd19dA20D9e20AA10cA53c808c478e5031A64EBD4").send({from: adr});					
+						})
+						$('#sell').click(function()
+						{   
+						contract.methods.sellTopaz().send({from: adr});
+						})
+						$('#buy').click(function()
+						{ 
+						var investment = (document.getElementById("invest").value)*1000000000000000000
+						var iinvest = BigInt(investment);
+						console.log(investment);
+						contract.methods.buyTopaz(adr).send({from: adr, value: investment, gas: 378096});					
+						})
+					}
+					}
+						catch (e){
+						if (e.code === 4001){
+							location.reload();
+						}
+					}
 });
 </script>
 </body>
