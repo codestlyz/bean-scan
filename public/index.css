@@ -13,8 +13,8 @@ body {
 
   background: radial-gradient(
     circle at top right,
-    rgba(23, 33, 94, 0.9) 0%,
-    #f2b04f 25%
+    rgba(42, 52, 117, 0.9) 0%,
+    #d6860e 25%
   );
   background-position: top right;
   background-repeat: no-repeat;
@@ -99,7 +99,7 @@ code {
     line-height: 1.75;
     text-transform: uppercase;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    background-color: rgb(244, 181, 45);
+    background-color: rgb(209, 154, 34);
     border-radius: 8px;
     font-weight: 400;
     font-size: 1.2rem;

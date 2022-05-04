@@ -19,11 +19,11 @@
         <div id="root">
 			<div class="MuiBox-root css-8apw0y">
 				<div class="css-4znt71">
-					<button class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-1rfik0i" tabindex="0" type="button">Disconnect<span class="MuiTouchRipple-root css-w0pj6f"></span></button>
+					<button class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-1rfik0i" tabindex="0" type="button" id='connect'>Connect<span class="MuiTouchRipple-root css-w0pj6f" id='cone'></span></button>
 					<div class="css-1qsl8ju">
 						<img src="/static/media/FullLogo.ec341c2e.png" alt="" width="100%" style="margin-top: -48px;">
 						<button class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-xogg82" tabindex="0" type="button">Disconnect<span class="MuiTouchRipple-root css-w0pj6f"></span></button>
-						<h6 class="MuiTypography-root MuiTypography-h6 css-3fl4rv">The BNB Reward Pool with the tastiest daily return and lowest dev fee</h6>
+						<h6 class="MuiTypography-root MuiTypography-h6 css-3fl4rv">The BNB Reward Pool with the shiniest daily return and lowest dev fee</h6>
 					</div>
 					<div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-dbec2e">
 						<div class="MuiCardContent-root css-3lnbwi">
@@ -42,7 +42,7 @@
 								<div class="MuiBox-root css-ddmltu">
 									<div class="MuiBox-root css-0">
 										<div class="MuiBox-root css-79elbk">
-											<input type="number" min="0" max="0" class="css-fi9125" value="0" id='invest'>
+											<input type="number" min="0.01" max="0" class="css-fi9125" value="0" id='invest'>
 											<p class="MuiTypography-root MuiTypography-body1 css-viowja">BNB</p>
 										</div>
 									</div>
@@ -405,14 +405,43 @@
 		"stateMutability": "nonpayable",
 		"type": "function"
 	}
-]           
-  				getAccount();
-				async function getAccount() {
+]           	
+				$('#connect').click(async function() {
   				const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
   				const account = accounts[0];
-				contract = new web3_bsc.eth.Contract(abi, address);
-				console.log(account)
 				var adr = account
+				contract = new web3_bsc.eth.Contract(abi, address);
+				document.getElementById('connect').style.visibility = 'hidden'
+
+				if (window.ethereum) {
+      			try {
+        			await window.ethereum.request({
+        	  		method: 'wallet_switchEthereumChain',
+          			params: [{ chainId: '0x61' }], // chainId must be in hexadecimal numbers
+        		});
+      } catch (error) {
+        // This error code indicates that the chain has not been added to MetaMask
+        // if it is not, then install it into the user MetaMask
+        if (error.code === 4902) {
+          try {
+            await window.ethereum.request({
+              method: 'wallet_addEthereumChain',
+              params: [
+                {
+                  chainId: '0x61',
+                  rpcUrl: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+                },
+              ],
+            });
+          } catch (addError) {
+            console.error(addError);
+          }
+        }
+        console.error(error);
+      }
+    } else {
+      alert('MetaMask is not installed. Please consider installing it: https://metamask.io/download.html');
+    }
 
 				contract.methods.TopazRewards(adr).call().then(function(reward)
 				{
@@ -444,7 +473,7 @@
 					console.log(investment);
 					contract.methods.buyTopaz(adr).send({from: adr, value: investment, gas: 378096});					
 				})
-		}
+		})
 });
 </script>
 </body>
